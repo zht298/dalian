@@ -25,6 +25,7 @@ def fetch_playlist_url():
         for _ in range(1):  # 尝试三次
             try:
                 response = requests.get(url, headers=headers)  # 发送HTTP GET请求
+                print(f"Response status_code for {channel_name}: {response.status_code}")  # 打印response.status_code
                 print(f"Response object for {channel_name}: {response}")  # 打印response对象
                 print(f"Response text for {channel_name}: {response.text}")  # 打印获取响应的文本内容
                 if response.status_code == 200:  # 如果请求成功，退出重试循环
